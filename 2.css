@@ -1,0 +1,94 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  box-sizing: border-box;
+  background-color: #ff6699;
+}
+
+.card-container {
+  position: relative;
+  width: 420px;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  width: 400px;
+  height: 250px;
+  background-color: #f2a6bb;
+  border-radius: 0 0 15px 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  position: absolute;
+  cursor: pointer;
+  z-index: 2;
+  transition: transform 2s ease;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-left: 200px solid transparent;
+  border-right: 200px solid transparent;
+  border-top: 120px solid #8deeee;
+}
+
+button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 10;
+  padding: 8px 16px;
+  border-radius: 15px;
+  cursor: pointer;
+  color: #ff3300;
+  background-color: #ff99cc;
+  border: 1px solid transparent;
+  font-weight: bold;
+  transition:
+    transform 0.3s ease,
+    background-color 0.3s ease;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+button:hover {
+  transform: translate(-50%, -50%) scale(1.1);
+  background-color: #ff80bf;
+}
+
+h1 {
+  text-align: center;
+  font-size: 22px;
+  margin-top: 0;
+}
+
+.nd {
+  position: absolute;
+  width: 360px;
+  background-color: #99ccff;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  z-index: 1;
+  transform: translateY(30px);
+  transition:
+    transform 2s ease,
+    opacity 2s ease;
+}
+.nd.open {
+  transform: translateY(-130px);
+  opacity: 1;
+  z-index: 3;
+}
+.card.open {
+  transform: translateY(140px);
+}
